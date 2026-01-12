@@ -1,43 +1,84 @@
-# Astro on Netlify Platform Starter
+grace-trader
+index.html
+style.css
+script.js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GraceTrader</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-[Live Demo](https://astro-platform-starter.netlify.app/)
+<div class="card">
+  <img src="logo.jpg" class="logo">
 
-A modern starter based on Astro.js, Tailwind, and [Netlify Core Primitives](https://docs.netlify.com/core/overview/#develop) (Edge Functions, Image CDN, Blobs).
+  <h1>Grace TRADER</h1>
+  <p>Join our <b>Premium Forex Channel</b> & get</p>
 
-## Astro Commands
+  <ul>
+    <li>✅ 100% Accurate Signals</li>
+    <li>✅ Daily Profits Assured 💸</li>
+    <li>✅ Professional Risk Management 📈</li>
+  </ul>
 
-All commands are run from the root of the project, from a terminal:
+  <div class="timer">
+    Offer Ends In: <span id="time">00:00:10</span>
+  </div>
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+  <a href="https://t.me/YOURCHANNEL" class="btn">JOIN WHATSAPP NOW</a>
 
-## Deploying to Netlify
+  <small>Ads managed by AdzMind Agency</small>
+</div>
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-platform-starter)
+<script src="script.js"></script>
+</body>
+</html>
+body{
+  background:#000;
+  font-family:Arial;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  color:white;
+}
 
-## Developing Locally
+.card{
+  background:#0b0b0b;
+  padding:25px;
+  border-radius:20px;
+  text-align:center;
+  width:90%;
+  max-width:360px;
+  box-shadow:0 0 25px #00ffc3;
+}
 
-| Prerequisites                                                                |
-| :--------------------------------------------------------------------------- |
-| [Node.js](https://nodejs.org/) v18.20.8+.                                    |
-| (optional) [nvm](https://github.com/nvm-sh/nvm) for Node version management. |
+.logo{
+  width:120px;
+  border-radius:50%;
+  border:4px solid #00ffc3;
+}
 
-1. Clone this repository, then run `npm install` in its root directory.
+h1{color:#00ffc3;}
 
-2. Recommended: link your local repository to a Netlify project. This will ensure you're using the same runtime version for both local development and your deployed project.
+ul{list-style:none;padding:0;}
 
-```
-netlify link
-```
-
-3. Run the Astro.js development server:
-
-```
-npm run dev
-```
+.btn{
+  display:block;
+  background:linear-gradient(90deg,#00ffc3,#007bff);
+  padding:14px;
+  color:black;
+  text-decoration:none;
+  border-radius:10px;
+  margin-top:15px;
+  font-weight:bold;
+}let time = 10;
+setInterval(()=>{
+  if(time > 0){
+    time--;
+    document.getElementById("time").innerText = "00:00:" + (time<10?"0":"") + time;
+  }
+},1000);
